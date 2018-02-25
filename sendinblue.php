@@ -10,12 +10,28 @@ if(!class_exists('SendinBlue_CF7')){
 	    }
 
 	    public function activate(){
+
 	    }
 
 	    public function init(){
 	    	if($this->api_key){
 	    		add_filter( 'wpcf7_posted_data', array( $this, 'cf7_filter' ),10, 1 );
 	    	}
+	    	if(!defined( 'WPCF7_VERSION' )){
+	    		add_action( 'admin_notices', array($this, 'cf7_disabled_notice'));
+	    	}
+	    }
+
+	    public function cf7_disabled_notice(){
+			if ( ! current_user_can( 'activate_plugins' ) ) {
+				return;
+			}
+
+			echo '<div class="error">';
+			echo '<p>';
+			_e( 'The SendinBlue Opt-in checkbox for Contact Form 7 plugin requires Contact Form 7', 'sendinblue_cf7_opt_in' );
+			echo '</p>';
+			echo '</div>';	    	
 	    }
 
 	    public function cf7_filter($posted_data){
