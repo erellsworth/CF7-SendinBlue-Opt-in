@@ -1,4 +1,9 @@
 <?php
+
+if(!class_exists('Mailin')){
+	require(EE_SIB_CF7_PATH . '/mailin-api-php/V2.0/Mailin.php');
+}
+
 if(!class_exists('SendinBlue_CF7')){
 	class SendinBlue_CF7{
 		private $api_key = false;
@@ -17,6 +22,7 @@ if(!class_exists('SendinBlue_CF7')){
 	    	if($this->api_key){
 	    		add_filter( 'wpcf7_posted_data', array( $this, 'cf7_filter' ),10, 1 );
 	    	}
+
 	    	if(!defined( 'WPCF7_VERSION' )){
 	    		add_action( 'admin_notices', array($this, 'cf7_disabled_notice'));
 	    	}
@@ -35,8 +41,8 @@ if(!class_exists('SendinBlue_CF7')){
 	    }
 
 	    public function cf7_filter($posted_data){
-		  if($posted_data['email-opt-in'][0] && $posted_data['list_id']){
-		    $mailin = new \Mailin('https://api.sendinblue.com/v2.0',SEND_IN_BLUE_KEY); 
+		  if($posted_data['sendinblue-opt-in'][0] && $posted_data['sendinblue-list-id']){
+		    $mailin = new Mailin('https://api.sendinblue.com/v2.0',SEND_IN_BLUE_KEY); 
 
 		    $data = array(
 		      "email" => $posted_data['your-email'],
