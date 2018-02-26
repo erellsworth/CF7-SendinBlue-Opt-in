@@ -1,0 +1,3 @@
+[submodule "mailin-api-php"]
+	path = mailin-api-php
+	url = https://github.com/mailin-api/mailin-api-php.git
