@@ -1,4 +1,4 @@
-=== SendinBlue Subscribe Form And WP SMTP ===
+=== Contact Form 7 SendInBlue Opt-in Checkbox ===
 Contributors: erellsworth
 Tags: sendinblue, contact form 7, opt-in, marketing automation, email marketing, email campaign, newsletter, subscription form, phpmailer, SMTP, wp_mail, massive email, sendmail, wp-phpmailer, newsletters, email plugin, signup form
 Requires at least: 4.4

@@ -1,0 +1,9 @@
+= 1.0.1 =
+
+* Add assets
+* Update name of plugin in readme
+* Add changelog.txt
+
+= 1.0.0 =
+
+* Initial release.

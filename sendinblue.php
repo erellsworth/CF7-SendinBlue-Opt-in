@@ -47,11 +47,12 @@ if(!class_exists('SendinBlue_CF7')){
 		    $data = array(
 		      "email" => $posted_data['your-email'],
 		      'listid' => array($posted_data['list_id'])
-		      );
+		     );
 
 		    if($posted_data['your-name']){
 		        $data['attributes'] = array('NAME' => $posted_data['your-name']);
 		    }
+		    
 		    $mailin->create_update_user($data);        
 		  }	    	
 			return $posted_data; 
