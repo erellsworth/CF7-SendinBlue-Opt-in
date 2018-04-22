@@ -41,12 +41,13 @@ if(!class_exists('SendinBlue_CF7')){
 	    }
 
 	    public function cf7_filter($posted_data){
+	    
 		  if($posted_data['sendinblue-opt-in'][0] && $posted_data['sendinblue-list-id']){
 		    $mailin = new Mailin('https://api.sendinblue.com/v2.0',SEND_IN_BLUE_KEY); 
 
 		    $data = array(
 		      "email" => $posted_data['your-email'],
-		      'listid' => array($posted_data['list_id'])
+		      'listid' => array($posted_data['sendinblue-list-id'])
 		     );
 
 		    if($posted_data['your-name']){

@@ -1,14 +1,14 @@
 <?php
 /**
  * @package SendinBlue_CF7
- * @version 1.0.1
+ * @version 1.0.2
  */
 /*
 Plugin Name: SendinBlue Opt-in checkbox for Contact Form 7
 Description: Add a SendinBlue subscription Opt-in checkbox to Contact Form 7
 Author: E.R. Ellsworth
 Plugin URI: https://erellsworth.com/wordpress
-Version: 1.0.1
+Version: 1.0.2
 Author URI: https://erellsworth.com
 */
 
